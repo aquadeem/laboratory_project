@@ -15,8 +15,8 @@ class IndexView(View):
             'form': IndexForm(),
         })
 
-
     def post(self, request):
+
         form = IndexForm(request.POST)
         if form.is_valid():
             student = Student()
@@ -54,6 +54,7 @@ class StudentListDelete(DeleteView):
     model = Student
     template_name = 'student/delete_student.html'
     success_url = reverse_lazy('list_student')
+
 
 class StudentListAdd(CreateView):
 

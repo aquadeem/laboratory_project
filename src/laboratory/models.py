@@ -1,5 +1,5 @@
-from django.db import models
-from django.db.models import Model, CharField, DateTimeField, IntegerField
+from django.db.models import Model, CharField, DateTimeField
+
 
 class DateTimeMixin(Model):
     created_at = DateTimeField(auto_now_add=True, null=True)
