@@ -47,4 +47,3 @@ class Lesson(DateTimeMixin, Model):
 
     name = CharField(max_length=50)
     type = CharField(max_length=50, default='Practice')
-

@@ -3,7 +3,6 @@ from django.core.mail import send_mail
 from django.template import loader
 
 
-
 def send(subject, to_email, template_name, context=None):
     template = loader.get_template(template_name)
     html_message = template.render(context)

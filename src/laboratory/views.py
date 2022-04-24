@@ -173,5 +173,3 @@ class SendMailPage(View):
             return HttpResponse('Was Sent')
 
         return HttpResponse('Error')
-
-
