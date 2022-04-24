@@ -1,4 +1,4 @@
-from django.db.models import Model, CharField, DateTimeField
+from django.db.models import Model, CharField, DateTimeField, IntegerField
 
 
 class DateTimeMixin(Model):
@@ -12,3 +12,39 @@ class DateTimeMixin(Model):
 class Student(DateTimeMixin, Model):
 
     first_name = CharField(max_length=50)
+    last_name = CharField(max_length=50,  default='Undefined')
+
+
+class Teacher(DateTimeMixin, Model):
+
+    first_name = CharField(max_length=50)
+    last_name = CharField(max_length=50)
+    age = IntegerField(default='0')
+    status = CharField(max_length=50, default='Active')
+
+
+class Group(DateTimeMixin, Model):
+
+    name = CharField(max_length=50)
+    city = CharField(max_length=50)
+    amount = IntegerField(default='0')
+    type = CharField(max_length=50, default='Offline')
+
+
+class Subject(DateTimeMixin, Model):
+
+    name = CharField(max_length=50)
+    level = CharField(max_length=50, default='Novice')
+
+
+class Course(DateTimeMixin, Model):
+
+    name = CharField(max_length=50)
+    type = CharField(max_length=50, default='Offline')
+
+
+class Lesson(DateTimeMixin, Model):
+
+    name = CharField(max_length=50)
+    type = CharField(max_length=50, default='Practice')
+
