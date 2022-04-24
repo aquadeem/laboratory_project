@@ -135,14 +135,6 @@ class TeacherListAdd(CreateView):
     template_name = 'teacher/add_teacher.html'
     success_url = reverse_lazy('list_teacher')
 
-def email_page(request):
-    send('hello', 'aoire15@gmail.com', 'email/send_email.html', context={
-        'name': 'Bratok',
-        'surname': 'Bratok',
-    }
-         )
-
-    return HttpResponse('Was sent')
 
 def base_template(request):
     return render(request, 'base.html')

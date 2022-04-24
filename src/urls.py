@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from laboratory.views import IndexView, StudentListView, StudentListUpdate, StudentListDelete, \
     StudentListAdd, StudentListDetail, base_template, get_reset_password, get_welcome_email, get_email_verification, \
-    email_page, SendMailPage, CourseListAdd, CourseListDelete, CourseListUpdate, CourseListDetail, CourseListView, \
+    SendMailPage, CourseListAdd, CourseListDelete, CourseListUpdate, CourseListDetail, CourseListView, \
     TeacherListAdd, TeacherListDelete, TeacherListUpdate, TeacherListDetail, TeacherListView
 
 urlpatterns = [
@@ -25,7 +25,6 @@ urlpatterns = [
     path('index/', IndexView.as_view()),
     path('base/', base_template),
     path('send_mail/', SendMailPage.as_view()),
-    path('send_email/', email_page),
     path('reset_password/', get_reset_password),
     path('welcome_email/', get_welcome_email),
     path('email_verification/', get_email_verification),
