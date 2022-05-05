@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from laboratory.views import IndexView, StudentListView, StudentListUpdate, StudentListDelete,\
-    StudentListAdd, StudentListDetail, base_template, get_reset_password, get_welcome_email, get_email_verification
+from laboratory.views import IndexView, StudentListView, StudentListUpdate, StudentListDelete, \
+    StudentListAdd, StudentListDetail, base_template, get_reset_password, get_welcome_email, get_email_verification, \
+    SendMailPage, CourseListAdd, CourseListDelete, CourseListUpdate, CourseListDetail, CourseListView, \
+    TeacherListAdd, TeacherListDelete, TeacherListUpdate, TeacherListDetail, TeacherListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', IndexView.as_view()),
     path('base/', base_template),
+    path('send_mail/', SendMailPage.as_view()),
     path('reset_password/', get_reset_password),
     path('welcome_email/', get_welcome_email),
     path('email_verification/', get_email_verification),
@@ -29,5 +32,15 @@ urlpatterns = [
     path('info_student/<int:pk>', StudentListDetail.as_view(), name='info_student'),
     path('update_student/<int:pk>', StudentListUpdate.as_view(), name='update_student'),
     path('delete_student/<int:pk>', StudentListDelete.as_view(), name='delete_student'),
-    path('add_student/', StudentListAdd.as_view(), name='add_student')
+    path('add_student/', StudentListAdd.as_view(), name='add_student'),
+    path('list_course/', CourseListView.as_view(), name='list_course'),
+    path('info_course/<int:pk>', CourseListDetail.as_view(), name='info_course'),
+    path('update_course/<int:pk>', CourseListUpdate.as_view(), name='update_course'),
+    path('delete_course/<int:pk>', CourseListDelete.as_view(), name='delete_course'),
+    path('add_course/', CourseListAdd.as_view(), name='add_course'),
+    path('list_teacher/', TeacherListView.as_view(), name='list_teacher'),
+    path('info_teacher/<int:pk>', TeacherListDetail.as_view(), name='info_teacher'),
+    path('update_teacher/<int:pk>', TeacherListUpdate.as_view(), name='update_teacher'),
+    path('delete_teacher/<int:pk>', TeacherListDelete.as_view(), name='delete_teacher'),
+    path('add_teacher/', TeacherListAdd.as_view(), name='add_teacher')
 ]
