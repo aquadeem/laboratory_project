@@ -3,6 +3,7 @@ from django.utils.html import format_html
 
 from laboratory.models import Student, Teacher, Group
 
+
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'age', 'email',)
     list_filter = ('age',)
@@ -14,7 +15,7 @@ class StudentAdmin(admin.ModelAdmin):
         else:
             return f'{instance.first_name}{instance.last_name}'
 
+
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Teacher)
 admin.site.register(Group)
-
